@@ -1,0 +1,9 @@
+@use '../components/buttons' as *;
+
+section.nav-menu .container nav{
+    display: flex;
+    
+    a{
+        @include button;
+    }
+}

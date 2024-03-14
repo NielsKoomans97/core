@@ -36,7 +36,9 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        //
+        $blocks = $page->blocks()->get();
+
+        return view('pages\base')->with('blocks', $blocks);
     }
 
     /**

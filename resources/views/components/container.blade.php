@@ -1,21 +1,10 @@
+<x-header />
 @php
-    $cssConfig = json_decode(file_get_contents('resources/config/css.json'));
-    $scriptConfig = json_decode(file_get_contents('resources/config/scripts.json'));
+    $requestUri = substr($_SERVER['REQUEST_URI'],1);
 
-    $css = '';
-    $js = '';
-
-    foreach($cssConfig as $item){
-        $css .= ', ' . $item;
-    }
-
-    foreach($scriptConfig as $item){
-        $js .= ', ' . $item;
-    }
+    $className = empty($requestUri) ? 'index' : $requestUri;
 @endphp
-
-<x-header script-sources="{{ $js }}" css-sources="{{ $css }}" />
-<div class="content ">
+<div class="content {{ $className }}">
     @yield('content')
 </div>
 <x-footer />

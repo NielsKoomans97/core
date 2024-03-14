@@ -9,7 +9,8 @@ class Page extends Model
 {
     use HasFactory;
 
-    public function assets(){
+    public function assets()
+    {
         return $this->hasMany(Asset::class);
     }
 }

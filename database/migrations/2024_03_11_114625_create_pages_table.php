@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->longText('content');
             $table->mediumText('title');
             $table->unsignedBigInteger('user');
+
+            $table->foreign('user')->references('id')->on('users');
         });
     }
 

@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->longText('uri');
+            $table->longText('localpath');
+            $table->unsignedBigInteger('page_id');
+
+            $table->foreign('page_id')->references('id')->on('pages');
         });
     }
 
