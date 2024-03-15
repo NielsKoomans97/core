@@ -1,9 +1,16 @@
-@use '../components/buttons' as *;
+@use "../components/buttons" as *;
 
-section.nav-menu .container nav{
+section.nav-menu div.container {
     display: flex;
-    
-    a{
-        @include button;
+    justify-content: space-between;
+
+    nav {
+        display: flex;
+
+        a {
+            @include button;
+
+            border-radius: 0;
+        }
     }
 }
