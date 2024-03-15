@@ -12,7 +12,7 @@ class NavMenu extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $logo = 'bla'
+        public string $logo = 'bla',
     )
     {
         //
